@@ -148,6 +148,17 @@ int main() {
         printCache(cache); // Печатаем состояние кэша
     }
 
+    destroyCache(cache);
+
+    runAdditionalTests();
+
+    // stdin
+    printf("Enter access sequence (separated by spaces, -1 to exit):\n");
+    int inputKey;
+    while (scanf("%d", &inputKey) != EOF && inputKey != -1) {
+        accessData(cache, inputKey);
+        printCache(cache);
+    }
 
 
     destroyCache(cache); // Уничтожаем кэш
